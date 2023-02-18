@@ -35,7 +35,7 @@ export default {
         height: 500px;
         width: 100%;
         background-color: #F1F1F1;
-        padding: 40px 25px;
+        padding: 70px 25px;
         margin:0 auto;
 
         .wrapper{
