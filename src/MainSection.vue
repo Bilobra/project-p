@@ -29,23 +29,78 @@
             </div>
 
         </div>
-        <CarouselComponent />
+        <div class="container-fluid d-flex justify-content-center py-5">
+            <CarouselComponent @next="next" @prev="prev">
+                <carousel-slide v-for="(slide, index) in slides" :key="slide" :index="index" :visibleSlide="visibleSlide"
+                    :direction="direction" class="text-center">
+                    <img class="img-fluid img_carousel" :src="slide" />
+                </carousel-slide>
+            </CarouselComponent>
+        </div>
     </section>
 </template>
 
 <script>
 import CarouselComponent from './components/main/CarouselComponent.vue';
+import CarouselSlide from './components/main/CarouselSlide.vue';
 export default {
     name: 'MainSection',
     components: {
         CarouselComponent,
+        CarouselSlide,
+    },
+
+    data() {
+        return {
+            slides: [
+                
+                require('./assets/biglietto.jpg'),
+                require('./assets/boolflix.jpg'),
+                require('./assets/boolzapp.jpg'),
+                require('./assets/campominato.jpg'),
+                require('./assets/comics.jpg'),
+                require('./assets/playstation.jpg'),
+                require('./assets/spotify.jpg'),
+                require('./assets/todo.jpg'),
+
+            ],
+            visibleSlide: 0,
+            direction: 'left'
+        }
+    },
+
+    computed: {
+        slidesLen() {
+            return this.slides.length;
+        }
+    },
+
+
+    methods: {
+        next() {
+            if (this.visibleSlide >= this.slidesLen - 1) {
+                this.visibleSlide = 0;
+            } else {
+                this.visibleSlide++;
+            }
+            this.direction = "left"
+        },
+        prev() {
+            if (this.visibleSlide <= 0) {
+                this.visibleSlide = this.slidesLen - 1;
+            } else {
+                this.visibleSlide--;
+            }
+            this.direction = "right"
+
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .myheight {
-    height: 100vh;
+    // height: 100vh;
 
     .hero {
         height: 500px;
@@ -72,6 +127,12 @@ export default {
 
 
 
+    }
+
+    .img_carousel{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
     }
 }
 </style>
