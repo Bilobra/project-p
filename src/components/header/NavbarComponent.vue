@@ -16,9 +16,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav navbar_collapse">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Profilo</a>
-                    <a class="nav-link" href="#">Skills</a>
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#profilo">Profilo</a>
+                    <a class="nav-link" href="#skills">Skills</a>
 
                 </div>
             </div>
@@ -53,6 +53,7 @@ export default {
 .nav-link,
 .navbar-brand {
     color: black;
+    font-size: 1.3rem;
 
 }
 </style>
