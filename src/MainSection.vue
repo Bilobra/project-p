@@ -37,7 +37,10 @@
             <CarouselComponent @next="next" @prev="prev" class="col">
                 <carousel-slide v-for="(slide, index) in slides" :key="slide" :index="index" :visibleSlide="visibleSlide"
                     :direction="direction" class="text-center carousel_slide">
-                    <a :href="slide.link"><img class="img-fluid img_carousel" :src="slide.thumb" /></a>
+                    <a :href="slide.link" target="_blank"><img class="img-fluid img_carousel" :src="slide.thumb" /></a>
+                    <div class="badge_slide">
+                        <h4>{{ slide.name }}</h4>
+                    </div>
                 </carousel-slide>
             </CarouselComponent>
         </div>
@@ -61,49 +64,64 @@ export default {
 
                 {
                     thumb: require('./assets/biglietto.jpg'),
-                    link: '#',
+                    link: 'https://biglietto-treno-bra.netlify.app/',
+                    name: 'Biglietto treno'
 
                 },
                 {
                     thumb: require('./assets/boolflix.jpg'),
-                    link: '#',
+                    link: 'https://vue-boolflix-bra.netlify.app/',
+                    name: 'Boolflix'
+
 
                 },
                 {
                     thumb: require('./assets/boolzapp.jpg'),
 
-                    link: '#',
+                    link: 'https://boolzapp-bra-web.netlify.app/',
+                    name: 'Bolzapp web'
+
 
                 },
                 {
                     thumb: require('./assets/campominato.jpg'),
 
-                    link: '#',
+                    link: 'https://campominato-grid-bra.netlify.app/',
+                    name: 'Campominato game'
+
 
                 },
                 {
                     thumb: require('./assets/comics.jpg'),
 
-                    link: '#',
+                    link: 'https://comic-dc-bra.netlify.app/',
+                    name: 'Comic Dc'
+
 
                 },
                 {
                     thumb: require('./assets/playstation.jpg'),
 
-                    link: '#',
+                    link: 'https://sony-playstation-bra.netlify.app/',
+                    name: 'Sony web site'
+
 
                 },
                 {
                     thumb: require('./assets/spotify.jpg'),
 
-                    link: '#',
+                    link: 'https://biglietto-treno-bra.netlify.app/',
+                    name: 'Spotify Web'
+
 
                 },
                 {
                     thumb: require('./assets/todo.jpg'),
 
 
-                    link: '#',
+                    link: 'https://todolist-bra.netlify.app/',
+                    name: 'Todo List'
+
 
                 }
 
@@ -197,6 +215,13 @@ export default {
     .carousel_slide:hover img {
         cursor: pointer;
         transform: scale(0.98);
+        opacity: 0.8;
+    }
+
+    .carousel_slide:hover .badge_slide {
+        display: block;
+        transition: all 400ms;
+
     }
 }
 
@@ -206,5 +231,24 @@ export default {
 
 
     }
+}
+
+.badge_slide {
+    // width: 50px;
+    /* height: 50px; */
+    background-color: rgba(0, 0, 0, 0.607);
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    border-radius: 8px 8px 0px 8px;
+    padding: 8px;
+    // font-size: 14px;
+    display: none;
+
+    h4 {
+        font-size: 12px;
+    }
+
 }
 </style>
