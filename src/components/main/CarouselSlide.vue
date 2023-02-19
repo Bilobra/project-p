@@ -20,7 +20,9 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 20px;
 }
+
 .left-enter-active {
     animation: leftInAnimation 0.4s ease-in-out;
 }

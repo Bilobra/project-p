@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class=" d-flex flex-column p-0">
-      <HeaderComponent />
+    <HeaderComponent />
+    <div class=" d-flex flex-column p-0 ">
       <MainSection/>
       <!-- <CarouselComponent/> -->
       <FooterSection />

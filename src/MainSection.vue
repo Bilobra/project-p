@@ -14,7 +14,7 @@
                 </div>
                 <div class="col">
                     <h2>
-                        <a id=""></a>La mia storia in breve:
+                        <a id="home"></a>La mia storia in breve:
                     </h2>
                     <p>
                         A Giugno 2022, inizio un corso professionalizzante
@@ -29,11 +29,15 @@
             </div>
 
         </div>
-        <div class="container-fluid d-flex justify-content-center py-5">
-            <CarouselComponent @next="next" @prev="prev">
+        <div
+            class="container-fluid d-flex justify-content-center  flex-column align-items-center row rowx-cols-1 row-cols-sm-1 m-auto container_carousel">
+            <div class="text-center col pt-5">
+                <h2><a id="projects"></a>Ecco alcuni lavori:</h2>
+            </div>
+            <CarouselComponent @next="next" @prev="prev" class="col">
                 <carousel-slide v-for="(slide, index) in slides" :key="slide" :index="index" :visibleSlide="visibleSlide"
-                    :direction="direction" class="text-center">
-                    <img class="img-fluid img_carousel" :src="slide" />
+                    :direction="direction" class="text-center carousel_slide">
+                    <a :href="slide.link"><img class="img-fluid img_carousel" :src="slide.thumb" /></a>
                 </carousel-slide>
             </CarouselComponent>
         </div>
@@ -43,6 +47,7 @@
 <script>
 import CarouselComponent from './components/main/CarouselComponent.vue';
 import CarouselSlide from './components/main/CarouselSlide.vue';
+
 export default {
     name: 'MainSection',
     components: {
@@ -53,17 +58,57 @@ export default {
     data() {
         return {
             slides: [
-                
-                require('./assets/biglietto.jpg'),
-                require('./assets/boolflix.jpg'),
-                require('./assets/boolzapp.jpg'),
-                require('./assets/campominato.jpg'),
-                require('./assets/comics.jpg'),
-                require('./assets/playstation.jpg'),
-                require('./assets/spotify.jpg'),
-                require('./assets/todo.jpg'),
+
+                {
+                    thumb: require('./assets/biglietto.jpg'),
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/boolflix.jpg'),
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/boolzapp.jpg'),
+
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/campominato.jpg'),
+
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/comics.jpg'),
+
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/playstation.jpg'),
+
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/spotify.jpg'),
+
+                    link: '#',
+
+                },
+                {
+                    thumb: require('./assets/todo.jpg'),
+
+
+                    link: '#',
+
+                }
 
             ],
+
             visibleSlide: 0,
             direction: 'left'
         }
@@ -101,13 +146,16 @@ export default {
 <style lang="scss" scoped>
 .myheight {
     // height: 100vh;
+    // box-shadow: 1px 1px 20px #ced4da;
+    // box-shadow: 0px 7px 20px 1px #00000085;
 
     .hero {
-        height: 500px;
+        min-height: 500px;
         width: 100%;
         background-color: #F1F1F1;
         padding: 70px 25px;
         margin: 0 auto;
+        box-shadow: 1px 1px 20px #ced4da;
 
         .wrapper {
             width: 250px;
@@ -121,7 +169,9 @@ export default {
                 width: 80%;
                 filter: drop-shadow(8px 8px 10px gray);
                 opacity: 0.95;
+
                 // height: 100%;
+
             }
         }
 
@@ -129,10 +179,32 @@ export default {
 
     }
 
-    .img_carousel{
+    .container_carousel {
+        padding-top: 30px;
+        padding-bottom: 70px;
+    }
+
+    .img_carousel {
         height: 100%;
-        width: 100%;
-        object-fit: contain;
+        width: 80%;
+        object-fit: cover;
+        box-shadow: 0px 6px 13px 1px #000000a1;
+        border-radius: 12px;
+    }
+
+
+
+    .carousel_slide:hover img {
+        cursor: pointer;
+        transform: scale(0.98);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero .col {
+        padding-bottom: 30px;
+
+
     }
 }
 </style>
