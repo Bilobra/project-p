@@ -110,7 +110,7 @@ export default {
                 {
                     thumb: require('./assets/spotify.jpg'),
 
-                    link: 'https://biglietto-treno-bra.netlify.app/',
+                    link: 'https://spotify-web-bra.netlify.app/',
                     name: 'Spotify Web'
 
 
