@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav navbar_collapse">
                     <a class="nav-link" href="#home">Home</a>
-                    <a class="nav-link" href="#profilo">Profilo</a>
+                    <a class="nav-link" href="#projects">Projects</a>
                     <a class="nav-link" href="#skills">Skills</a>
 
                 </div>
@@ -38,6 +38,13 @@ export default {
     background-color: #F1F1F1;
     box-shadow: 1px 1px 20px #ced4da;
     padding-bottom: 50px;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // z-index: 999;
+   
+    // height: 120px;
 
 
     .navbar_collapse {
@@ -45,6 +52,8 @@ export default {
     }
 }
 .logo_wrapper{
+    width: 80px;
+    height: 90px;
     img{
         height: 100%;
     }
@@ -53,7 +62,8 @@ export default {
 .nav-link,
 .navbar-brand {
     color: black;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
+    padding:0
 
 }
 </style>
