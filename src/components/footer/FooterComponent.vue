@@ -3,7 +3,7 @@
         <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-1">
             <div class="col">© 2023 - Bryan Carrozzo</div>
             <div class="col d-flex justify-content-center align-content-center align-items-center col_boolean">
-                <span><img src="../../assets/Logo.png" alt=""></span>
+                <span><img src="../../assets/logo.png" alt=""></span>
                 <p class="m-0"> <a href="https://boolean.careers/" target="_blank">Boolean</a></p>
             </div>
             <div class="col">
